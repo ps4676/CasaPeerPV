@@ -2,7 +2,6 @@ import streamlit as st
 
 from modules.data_loader import load_data
 from modules.calculations import calculate_values
-
 from modules.overview import show_overview
 from modules.monthly import show_monthly
 from modules.storage import show_storage
@@ -29,8 +28,7 @@ st.set_page_config(
 
 seite = st.sidebar.radio(
     "Navigation",
-    [
-        "📊 Übersicht",
+    [   "📊 Übersicht",
         "📅 Monatsübersicht",
         "🔋 Speicher",
         "☀️ PV-Produktion",

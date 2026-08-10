@@ -25,39 +25,41 @@ def show_overview(werte):
 
     PV = werte["PV"]
 
+    K_gesp_sum = werte["K_gesp_sum"]
+
 
     # ========================================================
     # KENNZAHLEN
     # ========================================================
-
+    st.subheader("Gesamtwerte bis gestern:")
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
 
         st.metric(
-            "Eigenverbrauch",
+            "Gesamtverbrauch:",
             f"{EigenV.sum():.2f} kWh"
         )
 
     with col2:
 
         st.metric(
-            "PV-Erzeugung",
+            "PV-Erzeugung:",
             f"{PV.sum():.2f} kWh"
         )
 
     with col3:
 
         st.metric(
-            "Netzimport",
+            "Netzimport:",
             f"{NetzImp.sum():.2f} kWh"
         )
 
     with col4:
 
         st.metric(
-            "Genutzte Solarenergie",
-            f"{genSolE.sum():.2f} kWh"
+            "Gesparte Kohle:",
+            f"{K_gesp_sum:.2f} €"
         )
 
 
@@ -80,42 +82,16 @@ def show_overview(werte):
 
     fig, ax = plt.subplots(figsize=(12, 5))
 
-    ax.plot(
-        t,
-        EigenV,
-        color=sblau,
-        marker="o",
-        label="Eigenverbrauch"
-    )
-
-    ax.plot(
-        t,
-        NetzImp,
-        color=smag,
-        marker="o",
-        label="Netzimport"
-    )
-
-    ax.plot(
-        t,
-        genSolE,
-        color=soran,
-        marker="o",
-        label="Genutzte Solarenergie"
-    )
-
+    ax.plot(t,EigenV,color=sblau,marker="o",label="Eigenverbrauch")
+    ax.plot(t,NetzImp,color=smag,marker="o",label="Netzimport")
+    ax.plot(t,genSolE,color=soran,marker="o",label="Genutzte Solarenergie")
     ax.grid(True)
-
     ax.set_xlabel("t in Tagen")
-
     ax.set_ylabel("E in kWh")
-
     ax.legend()
 
     fig.autofmt_xdate()
-
     st.pyplot(fig)
-
     plt.close(fig)
 
 

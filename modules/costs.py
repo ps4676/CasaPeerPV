@@ -9,20 +9,13 @@ def show_costs(werte):
 
     st.title("💶 Stromkosten")
 
-
     t = werte["t"]
-
     K_ges = werte["K_ges"]
-
     K_gesp = werte["K_gesp"]
-
     K_NI = werte["K_NI"]
 
-
     K_ges_sum = werte["K_ges_sum"]
-
     K_gesp_sum = werte["K_gesp_sum"]
-
     K_NI_sum = werte["K_NI_sum"]
 
     K_gesp_p = werte["K_gesp_p"]
@@ -42,26 +35,26 @@ def show_costs(werte):
     # KENNZAHLEN
     # ========================================================
 
+    st.subheader("Gesamtwerte bis gestern:")
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-
         st.metric(
-            "Kosten ohne PV",
+            "Gesamtkosten ohne PV bis gestern:",
             f"{K_ges_sum:.2f} €"
         )
 
     with col2:
 
         st.metric(
-            "Kosten mit PV",
+            "Kosten mit PV bis gestern:",
             f"{K_NI_sum:.2f} €"
         )
 
     with col3:
 
         st.metric(
-            "Gesparte Kosten",
+            "Gesparte Kosten bis gestern:",
             f"{K_gesp_sum:.2f} €"
         )
 
