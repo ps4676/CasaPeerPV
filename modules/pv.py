@@ -27,8 +27,8 @@ def show_pv(werte):
     # ========================================================
     # KENNZAHL
     # ========================================================
-    letztes_datum = t.max()
-    st.subheader(f"Gesamtwerte bis {letztes_datum.strftime('%d.%m.%Y')}")
+    st.subheader(f"Gesamtwerte bis {t.max().strftime('%d.%m.%Y')}:")
+
     st.metric(f"{PV.sum():.2f} kWh")
 
 
