@@ -29,7 +29,37 @@ def show_pv(werte):
     # ========================================================
     st.subheader(f"Gesamtwerte bis {t.max().strftime('%d.%m.%Y')}:")
 
-    st.metric(f"{PV.sum():.2f} kWh")
+    col1, col2, col3, col4, col5 = st.columns(5)
+
+    with col1:
+        st.metric(
+            "PV Gesamt",
+            f"{PV.sum():.2f} kWh"
+        )
+
+    with col2:
+        st.metric(
+            "PV1",
+            f"{PV1.sum():.2f} kWh"
+        )
+
+    with col3:
+        st.metric(
+            "PV2",
+            f"{PV2.sum():.2f} kWh"
+        )
+
+    with col4:
+        st.metric(
+            "PV3",
+            f"{PV3.sum():.2f} kWh"
+        )
+
+    with col5:
+        st.metric(
+            "PV4",
+            f"{PV4.sum():.2f} kWh"
+        )
 
 
     # ========================================================
