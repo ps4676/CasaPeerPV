@@ -23,9 +23,8 @@ def show_storage(werte):
     # ========================================================
     # KENNZAHLEN
     # ========================================================
-    st.write("TEST NEUE VERSION")
+    
     letztes_datum = t.max()
-
     st.subheader(f"Gesamtwerte bis {letztes_datum.strftime('%d.%m.%Y')}")
     col1, col2, col3, col4 = st.columns(4)
 
