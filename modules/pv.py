@@ -18,13 +18,9 @@ def show_pv(werte):
     t = werte["t"]
 
     PV = werte["PV"]
-
     PV1 = werte["PV1"]
-
     PV2 = werte["PV2"]
-
     PV3 = werte["PV3"]
-
     PV4 = werte["PV4"]
 
 

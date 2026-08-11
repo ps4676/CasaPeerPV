@@ -9,6 +9,7 @@ from modules.pv import show_pv
 from modules.performance import show_performance
 from modules.costs import show_costs
 from modules.amortization import show_amortization
+from modules.styles import navigation_style
 
 
 # ============================================================
@@ -26,17 +27,27 @@ st.set_page_config(
 # NAVIGATION
 # ============================================================
 
+st.sidebar.markdown(
+    navigation_style(),
+    unsafe_allow_html=True
+)
+
+st.sidebar.markdown("### ☀️ Casa Peer PV")
+
 seite = st.sidebar.radio(
     "Navigation",
-    [   "📊 Übersicht",
+    [
+        "📊 Übersicht",
         "📅 Monatsübersicht",
         "🔋 Speicher",
         "☀️ PV-Produktion",
         "📈 Modul-Performance",
         "💶 Stromkosten",
         "💰 Amortisation"
-    ]
+    ],
+    label_visibility="collapsed"
 )
+
 
 
 # ============================================================
