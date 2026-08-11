@@ -24,7 +24,9 @@ def show_amortization(werte):
     # ========================================================
     # KENNZAHL
     # ========================================================
-    st.subheader(f"Stand am {t.max().strftime('%d.%m.%Y')}:")
+    letztes_datum = t.max()
+    st.subheader(f"Gesamtwerte bis {letztes_datum.strftime('%d.%m.%Y')}")
+    
     st.metric(f"{amortisation:.2f} %")
 
 
