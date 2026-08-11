@@ -2,6 +2,7 @@ import streamlit as st
 
 from modules.data_loader import load_data
 from modules.calculations import calculate_values
+
 from modules.overview import show_overview
 from modules.monthly import show_monthly
 from modules.storage import show_storage
@@ -9,6 +10,7 @@ from modules.pv import show_pv
 from modules.performance import show_performance
 from modules.costs import show_costs
 from modules.amortization import show_amortization
+
 from modules.styles import navigation_style
 
 
@@ -49,7 +51,6 @@ seite = st.sidebar.radio(
 )
 
 
-
 # ============================================================
 # DATEIUPLOAD
 # ============================================================
@@ -73,13 +74,12 @@ else:
         "Standarddaten werden verwendet."
     )
 
+
 # ============================================================
 # DATEN LADEN
 # ============================================================
 
 data = load_data(uploaded_file)
-
-
 
 
 # ============================================================
@@ -97,31 +97,25 @@ if seite == "📊 Übersicht":
 
     show_overview(werte)
 
-
 elif seite == "📅 Monatsübersicht":
 
     show_monthly(werte)
-
 
 elif seite == "🔋 Speicher":
 
     show_storage(werte)
 
-
 elif seite == "☀️ PV-Produktion":
 
     show_pv(werte)
-
 
 elif seite == "📈 Modul-Performance":
 
     show_performance(werte)
 
-
 elif seite == "💶 Stromkosten":
 
     show_costs(werte)
-
 
 elif seite == "💰 Amortisation":
 
