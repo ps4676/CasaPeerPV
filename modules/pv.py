@@ -22,16 +22,13 @@ def show_pv(werte):
     PV2 = werte["PV2"]
     PV3 = werte["PV3"]
     PV4 = werte["PV4"]
-
+    t = werte["t"]
 
     # ========================================================
     # KENNZAHL
     # ========================================================
-
-    st.metric(
-        "Gesamte PV-Produktion",
-        f"{PV.sum():.2f} kWh"
-    )
+    st.subheader(f"Gesamtwerte bis {t.max().strftime('%d.%m.%Y')}:")
+    st.metric(f"{PV.sum():.2f} kWh")
 
 
     # ========================================================

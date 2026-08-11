@@ -19,16 +19,13 @@ def show_amortization(werte):
     kGain = werte["kGain"]
 
     T_amort_prog = werte["T_amort_prog"]
-
+    t = werte["t"]
 
     # ========================================================
     # KENNZAHL
     # ========================================================
-
-    st.metric(
-        "Amortisation",
-        f"{amortisation:.2f} %"
-    )
+    st.subheader(f"Stand am {t.max().strftime('%d.%m.%Y')}:")
+    st.metric(f"{amortisation:.2f} %")
 
 
     # ========================================================

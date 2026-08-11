@@ -19,7 +19,7 @@ def show_costs(werte):
     K_NI_sum = werte["K_NI_sum"]
 
     K_gesp_p = werte["K_gesp_p"]
-
+    t = werte["t"]
 
     # ========================================================
     # PREIS
@@ -34,8 +34,8 @@ def show_costs(werte):
     # ========================================================
     # KENNZAHLEN
     # ========================================================
-
-    st.subheader("Gesamtwerte bis gestern:")
+    st.subheader(f"Gesamtwerte bis {t.max().strftime('%d.%m.%Y')}:")
+   
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:

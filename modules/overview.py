@@ -26,12 +26,12 @@ def show_overview(werte):
     PV = werte["PV"]
 
     K_gesp_sum = werte["K_gesp_sum"]
-
+    t = werte["t"]
 
     # ========================================================
     # KENNZAHLEN
     # ========================================================
-    st.subheader("Gesamtwerte bis gestern:")
+    st.subheader(f"Gesamtwerte bis {t.max().strftime('%d.%m.%Y')}:")
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
