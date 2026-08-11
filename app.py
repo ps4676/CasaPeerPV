@@ -4,7 +4,6 @@ from modules.data_loader import load_data
 from modules.calculations import calculate_values
 
 from modules.overview import show_overview
-from modules.monthly import show_monthly
 from modules.storage import show_storage
 from modules.pv import show_pv
 from modules.performance import show_performance
@@ -97,9 +96,6 @@ if seite == "📊 Übersicht":
 
     show_overview(werte)
 
-elif seite == "📅 Monatsübersicht":
-
-    show_monthly(werte)
 
 elif seite == "🔋 Speicher":
 
