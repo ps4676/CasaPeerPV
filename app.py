@@ -40,10 +40,35 @@ seite = st.sidebar.radio(
 
 
 # ============================================================
+# DATEIUPLOAD
+# ============================================================
+
+st.sidebar.header("📂 Daten")
+
+uploaded_file = st.sidebar.file_uploader(
+    "CSV-Datei hochladen",
+    type=["csv"]
+)
+
+if uploaded_file is not None:
+
+    st.sidebar.success(
+        f"Datei geladen: {uploaded_file.name}"
+    )
+
+else:
+
+    st.sidebar.info(
+        "Standarddaten werden verwendet."
+    )
+
+# ============================================================
 # DATEN LADEN
 # ============================================================
 
-data = load_data()
+data = load_data(uploaded_file)
+
+
 
 
 # ============================================================
