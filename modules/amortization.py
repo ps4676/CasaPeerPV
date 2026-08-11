@@ -27,7 +27,7 @@ def show_amortization(werte):
     st.subheader(f"Stand am {t.max().strftime('%d.%m.%Y')}:")
 
     st.metric("Amortisation",f"{amortisation:.2f} %")
-
+    
 
     # ========================================================
     # KAUFPREIS VS. ERSPARNIS
