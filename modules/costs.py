@@ -40,28 +40,28 @@ def show_costs(werte):
 
     with col1:
         st.metric(
-            "Gesamtkosten ohne PV bis gestern:",
+            "Gesamtkosten ohne PV:",
             f"{K_ges_sum:.2f} €"
         )
 
     with col2:
 
         st.metric(
-            "Kosten mit PV bis gestern:",
+            "Kosten mit PV:",
             f"{K_NI_sum:.2f} €"
         )
 
     with col3:
 
         st.metric(
-            "Gesparte Kosten bis gestern:",
+            "Gesparte Kosten:",
             f"{K_gesp_sum:.2f} €"
         )
 
     with col4:
 
         st.metric(
-            "Ersparnis",
+            "Ersparnis:",
             f"{K_gesp_p:.2f} %"
         )
 
@@ -134,40 +134,15 @@ def show_costs(werte):
 
     fig, ax = plt.subplots(figsize=(12, 5))
 
-    ax.plot(
-        K_ges_months.index.astype(str),
-        K_ges_months.values,
-        color=sblau,
-        marker="o",
-        label="Gesamt"
-    )
-
-    ax.plot(
-        K_gesp_months.index.astype(str),
-        K_gesp_months.values,
-        color=soran,
-        marker="v",
-        label="Gespart"
-    )
-
-    ax.plot(
-        K_NI_months.index.astype(str),
-        K_NI_months.values,
-        color=smag,
-        marker="x",
-        label="Gekauft"
-    )
+    ax.plot(K_ges_months.index.astype(str),K_ges_months.values,color=sblau,marker="o",label="Gesamt")
+    ax.plot(K_gesp_months.index.astype(str),K_gesp_months.values,color=soran,marker="v",label="Gespart")
+    ax.plot(K_NI_months.index.astype(str),K_NI_months.values,color=smag,marker="x",label="Gekauft")
 
     ax.grid(True)
-
     ax.set_xlabel("t in Monaten")
-
     ax.set_ylabel("K in €")
-
     ax.legend()
-
     st.pyplot(fig)
-
     plt.close(fig)
 
 

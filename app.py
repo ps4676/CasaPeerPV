@@ -39,7 +39,6 @@ seite = st.sidebar.radio(
     "Navigation",
     [
         "📊 Übersicht",
-        "📅 Monatsübersicht",
         "🔋 Speicher",
         "☀️ PV-Produktion",
         "📈 Modul-Performance",
@@ -95,7 +94,6 @@ werte = calculate_values(data)
 if seite == "📊 Übersicht":
 
     show_overview(werte)
-
 
 elif seite == "🔋 Speicher":
 
