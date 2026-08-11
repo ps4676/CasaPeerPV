@@ -9,45 +9,53 @@ def show_monthly(werte):
 
     st.title("📅 Monatsübersicht")
 
-
+    
     EigenV_months = werte["EigenV_months"]
 
     NetzImp_months = werte["NetzImp_months"]
 
     genSolE_months = werte["genSolE_months"]
 
-
+    t = werte[t]
     # ========================================================
     # MONATLICHE KENNZAHLEN
     # ========================================================
 
     st.subheader("Monatliche Kennzahlen")
 
-    for monat in EigenV_months.index:
 
-        col1, col2, col3 = st.columns(3)
+    # for monat in EigenV_months.index:
 
-        with col1:
+    #     col1, col2, col3 = st.columns(3)
 
-            st.metric(
-                f"{monat} – Eigenverbrauch",
-                f"{EigenV_months.loc[monat]:.2f} kWh"
-            )
+    #     with col1:
 
-        with col2:
+    #         st.metric(
+    #             f"{monat} – Eigenverbrauch",
+    #             f"{EigenV_months.loc[monat]:.2f} kWh"
+    #         )
 
-            st.metric(
-                f"{monat} – Solarenergie",
-                f"{genSolE_months.loc[monat]:.2f} kWh"
-            )
+    #     with col2:
 
-        with col3:
+    #         st.metric(
+    #             f"{monat} – Solarenergie",
+    #             f"{genSolE_months.loc[monat]:.2f} kWh"
+    #         )
 
-            st.metric(
-                f"{monat} – Netzimport",
-                f"{NetzImp_months.loc[monat]:.2f} kWh"
-            )
+    #     with col3:
 
+    #         st.metric(
+    #             f"{monat} – Netzimport",
+    #             f"{NetzImp_months.loc[monat]:.2f} kWh"
+    #         )
+
+    plt.plot(t,EigenV_months,marker='o',color=sblau)
+    plt.plot(t,genSolE_months,marker='x',color=soran)
+    plt.plot(t,NetzImp_months,marker='D',color=smag)
+    plt.xlabel('t in Monaten')
+    plt.ylabel('E in kWh')
+    plt.grid(True)
+    plt.show()
 
     # ========================================================
     # DIAGRAMM
